@@ -1,0 +1,19 @@
+[package]
+name = "rustify"
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-only"
+description = "Fast, lightweight Spotify client in Rust"
+repository = "https://github.com/luxend0/rustify"
+publish = false
+
+[dependencies]
+librespot-core = "0.8"
+librespot-metadata = "0.8"
+librespot-oauth = "0.8"
+librespot-playback = { version = "0.8", default-features = false, features = ["native-tls", "pulseaudio-backend"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "signal"] }
+
+[dev-dependencies]
+env_logger = "0.11"
+log = "0.4.35"
